@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% block body %}
+{% load static %}
+{% load stars %}
+
+
+    <div id="mensAllHome">
+
+        <div id="mensAllNav">
+            <h4><span style="color: red;">Fashion </span> Which You Like Most</h4>
+            <ul>
+              <a href="{% url 'kids_boys' %}"> <i class="ri-checkbox-blank-line"></i> Boys</a>
+              <a href="{% url 'kids_girls' %}"> <i class="ri-checkbox-blank-line"></i> Girls</a>
+              <a href="{% url 'kids_infants' %}"> <i class="ri-checkbox-blank-line"></i> Infants</a>
+            </ul>
+        </div>
+        <div id="mensAllContnet">
+          <div id="mensFashionHeading" data-aos="slide-down" >
+            <p>Kids</p>
+            <h3>Fashion</h3>
+          </div>
+          <div id="mensFashionBestCollection">
+            <div id="mensFashionBestCollectionHeading" data-aos="slide-down">
+              <h1>Best Collection</h1>
+            </div>
+            <div id="mensFashionBestCollectionCards" class="swiper-container s4" data-aos="zoom-in" data-aos-delay="500">
+              <div class="swiper-wrapper">
+                {% for i in kidsLA %}
+                <div id="mensFashionBestCollectionCardsImg" class="swiper-slide">
+                  <div id="mfbccImgTop">
+                    <button><a href="{% url 'shop' i.id %}" style="color: #fff;">Add To Cart</a></button>
+                    <img src="{{ i.Image.url }}" alt="" srcset="">
+                  </div>
+                  <div id="mfbccImgHeading">
+                    <h3>{{ i.title }}</h3>
+                  </div>
+                  <hr>
+                  <div id="mfbccImgBottom">
+                    <p>&#8377; {{ i.price }}</p>
+                    <div id="mfbccImgBottomStar">
+                      {% countStars i.stars as y %}
+                      {% for k in y %}
+                      <i class="ri-star-fill"></i>
+                      {% endfor %}
+                      {% countStars2 i.stars as m %}
+                      {% for l in m %}
+                      <i class="ri-star-line"></i>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+            <div id="mfbccControls">
+              <div class="swiper-button-next mfbccControlsNext"></div>
+              <div class="swiper-button-prev mfbccControlsPrev"></div>
+            </div>
+          </div>
+          <br><br>
+          <hr>
+          <br><br>
+          <div id="mensFashionBestCollection">
+            <div id="mensFashionBestCollectionHeading" data-aos="slide-up">
+              <h1>Most Bought</h1>
+            </div>
+            <div id="mensFashionBestCollectionCards" class="swiper-container s4" data-aos="zoom-out" data-aos-delay="500">
+              <div class="swiper-wrapper">
+                {% for i in kidsBS %}
+                <div id="mensFashionBestCollectionCardsImg" class="swiper-slide">
+                  <div id="mfbccImgTop">
+                    <button><a href="{% url 'shop' i.id %}" style="color: #fff;">Add To Cart</a></button>
+                    <img src="{{ i.Image.url }}" alt="" srcset="">
+                  </div>
+                  <div id="mfbccImgHeading">
+                    <h3>{{ i.title }}</h3>
+                  </div>
+                  <hr>
+                  <div id="mfbccImgBottom">
+                    <p>&#8377; {{ i.price }}</p>
+                    <div id="mfbccImgBottomStar">
+                      {% countStars i.stars as y %}
+                      {% for k in y %}
+                      <i class="ri-star-fill"></i>
+                      {% endfor %}
+                      {% countStars2 i.stars as m %}
+                      {% for l in m %}
+                      <i class="ri-star-line"></i>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+            <div id="mfbccControls">
+              <div class="swiper-button-next mfbccControlsNext"></div>
+              <div class="swiper-button-prev mfbccControlsPrev"></div>
+            </div>
+          </div>
+            </div>
+
+          </div>
+        </div>
+    </div>
+
+
+    {% endblock body %}
+  

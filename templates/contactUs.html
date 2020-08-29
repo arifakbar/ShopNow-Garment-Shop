@@ -1,0 +1,44 @@
+{% extends "base2.html" %} 
+{% block body %}
+{% load static %}
+<style>
+    #AdminOrderMaintain{
+        height: 30px;
+        width: 150px;
+        text-align: center;
+        border: 1px solid black;
+        cursor: pointer;
+        color: white;
+        background-color: #Ffa948;
+    }
+</style>
+
+<div id="shoppingCartHome">
+    <h1>Orders</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Subject</th>
+            <th>Message</th>
+            <th>Actions</th>
+        </tr>
+        {% for i in contactmsg %}
+        <tr>
+            <td>{{ i.name }}</td>
+            <td>{{ i.email }}</td>
+            <td>{{ i.subject }}</td>
+            <td>{{ i.message }}</td>
+            <td>
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <button type="submit" value="{{ i.id }}" name="delete"  id="AdminOrderMaintain" >Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+    
+{% endblock body %}

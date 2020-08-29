@@ -1,0 +1,64 @@
+{% extends "base2.html" %} 
+{% block body %}
+{% load static %}
+<style>
+    #AdminOrderMaintain{
+        height: 35px;
+        width: 150px;
+        text-align: center;
+        border: 1px solid black;
+        cursor: pointer;
+        color: white;
+        background-color: #Ffa948;
+        margin-bottom: 5px;
+    }
+</style>
+
+<div id="shoppingCartHome">
+    <h1>Orders</h1>
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Availability</th>
+            <th>Latest Arrival</th>
+            <th>Best Seller</th>
+            <th>Actions</th>
+        </tr>
+        {% for i in products %}
+        <tr>
+            <td>{{ i.title }}</td>
+            <td>{{ i.title }}</td>
+            <td>{{ i.category }}</td>
+            <td>{{ i.availability }}</td>
+            <td>{{ i.latestArrival }}</td>
+            <td>{{ i.bestSeller }}</td>
+            <td>
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {% if i.availability %}
+                    <button id="AdminOrderMaintain" type="submit" value="{{ i.id }}" name="notAvialable">Not Avialable</button> <br>
+                    {% else %}
+                    <button id="AdminOrderMaintain" type="submit" value="{{ i.id }}" name="avialable">Avialable</button> <br>
+                    {% endif %}
+                    {% if i.latestArrival %}
+                    <button id="AdminOrderMaintain" type="submit" value="{{ i.id }}" name="removeLa">Remove from Latest Arrival</button> <br>
+                    {% else %}
+                    <button id="AdminOrderMaintain" type="submit" value="{{ i.id }}" name="addLa">Add to Latest Arrival</button><br>
+                    {% endif %}
+                    {% if i.bestSeller %}
+                    <button id="AdminOrderMaintain" type="submit" value="{{ i.id }}" name="removeBs">Remove from Best Seller</button><br>
+                    {% else %} 
+                    <button id="AdminOrderMaintain" type="submit" value="{{ i.id }}" name="addBs">Add to Best Seller</button><br>
+                    {% endif %}
+                    <button id="AdminOrderMaintain" type="submit" value="{{ i.id }}" name="delete">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+    
+{% endblock body %}

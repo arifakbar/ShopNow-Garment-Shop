@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block body %}
+{% load static %}
+
+
+    <div id="shopHome">
+
+      <h1 data-aos='slide-down'>Shop</h1>
+      <br>
+      <form action="" method="post">
+        {% csrf_token%}
+      <div id="shopHomeContent" width:100%;">
+        <div id="shopHomeLeft" data-aos='flip-right' data-aos-duration='800' >
+          <div id="shopHomeLeftImg" >
+            <img src="{{ product.Image.url }}" alt="" srcset="" class="shliMain">
+          </div>
+          <div id="shopHomeLeftImg2" >
+            <div id="shopHomeLeftImg2Holder" >
+              <img src="{{ product.Image.url }}" alt="" srcset="" class="shliSide" style="cursor: pointer;">
+            </div>
+            <div id="shopHomeLeftImg2Holder" >
+              <img src="{{ product.Image1.url }}" alt="" srcset="" class="shliSide" style="cursor: pointer;">
+            </div>
+            <div id="shopHomeLeftImg2Holder" >
+              <img src="{{ product.Image2.url }}" alt="" srcset="" class="shliSide" style="cursor: pointer;">
+            </div>
+          </div>
+        </div>
+      <div id="shopHomeRight" data-aos='flip-left' data-aos-duration='800' >
+        <h1>{{ product.title }}</h1>
+        <hr>
+        <h3>&#8377; {{ product.price }}</h3>
+        <hr>
+        <p>{{ product.description }}</p>
+        <h3>Quantity</h3>
+        <div id="shopHomeRightAction">
+          <input type="number" name="qty" min="1" max="5" required>
+          <button>Add To Cart</button>
+        </div>
+        <hr>  
+        <h3>Category : <a href="#" style="color: black;text-transform:capitalize"> {{ product.category }} </a></h3>
+
+      </div>
+    
+      </div>
+    </form>
+    </div>
+    
+
+    {% endblock body %}

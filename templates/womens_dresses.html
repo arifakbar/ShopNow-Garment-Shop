@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block body %}
+{% load static %}
+{% load stars %}
+
+    <div id="mensShirtHome">
+      <div id="mensShirtNav">
+        <h4><span style="color: red;">Fashion </span> Which You Like Most</h4>
+        <ul>
+          <a href="{% url 'womens_tops' %}" > <i class="ri-checkbox-blank-line"></i> Tops</a>
+          <a href="{% url 'womens_dresses' %}" style="color: red;"> <i class="ri-checkbox-blank-line"></i> Dresses</a>
+          <a href="{% url 'womens_jeans' %}"> <i class="ri-checkbox-blank-line"></i> Jeans</a>
+          <a href="{% url 'womens_saree' %}"> <i class="ri-checkbox-blank-line"></i> Sarees</a>
+          <a href="{% url 'womens_westernwear' %}"> <i class="ri-checkbox-blank-line"></i> Western Wear</a>
+        </ul>
+      </div>
+
+      <div id="mensShirtContent">
+        <div id="mensFashionHeading" data-aos="slide-down">
+          <p>Womens</p>
+          <h3>Fashion</h3>
+        </div>
+        <div
+          id="mensShirtContentCards"
+          class="swiper-container s5"
+          data-aos="slide-left"
+          data-aos-duration="1000"
+        >
+          <div class="swiper-wrapper">
+            {% for i in womensdresses %}
+            <div id="msccCard" class="swiper-slide">
+              <div id="msccCardImg">
+                <img src="{{ i.Image.url }}" alt="" />
+                <div id="msccCardImgHover">
+                  <h2>{{ i.title }}</h2>
+                  <p>
+                    {{ i.description }}  
+                  </p>
+                </div>
+              </div>
+              <div id="msccCardTop">
+                <h3>{{ i.title }}</h3>
+                <p>&#8377; {{ i.price }}</p>
+              </div>
+              <div id="msccCardMid">
+                {% countStars i.stars as y %}
+                {% for k in y %}
+                <i class="ri-star-fill"></i>
+                {% endfor %}
+                {% countStars2 i.stars as m %}
+                {% for l in m %}
+                <i class="ri-star-line"></i>
+                {% endfor %}
+              </div>
+              <div id="msccCardBottom">
+                <button><a href="{% url 'shop' i.id %}" style="color: #fff;">Add To Cart</a></button>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          <div class="swiper-pagination p5"></div>
+          <!--<div id="mfbccControls2"s>
+            <div class="swiper-button-next mfbccControlsNext"></div>
+            <div class="swiper-button-prev mfbccControlsPrev"></div>
+          </div>-->
+        </div>
+      </div>
+    </div>
+
+    {% endblock body %}

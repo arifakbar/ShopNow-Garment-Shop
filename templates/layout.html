@@ -1,0 +1,235 @@
+{% extends "base.html" %} 
+{% block body %}
+{% load static %}
+{% load stars %}
+
+
+
+
+    <div id="homePage">
+      <div class="swiper-container s1">
+        <div class="swiper-wrapper">
+          <div id="banner" class="swiper-slide" >
+            <div id="bannerLeft">
+              <h1 data-aos="fade-down" data-aos-duration="1000">
+                Get Up to 30% Off <br />
+                New Arrival
+              </h1>
+              <button data-aos="fade-down" data-aos-duration="1000"><a href="#latestArrivals" style="color:black">Shop Now</a></button>
+            </div>
+            <div id="bannerRight">
+              <img src="{% static 'Image 1.png' %}" alt="" srcset="" />
+            </div>
+          </div>
+          <div id="banner" class="swiper-slide">
+            <div id="bannerLeft">
+              <h1>
+                Get Up to 30% Off <br />
+                New Arrival
+              </h1>
+              <button data-aos="fade-down" data-aos-duration="1000"><a href="#latestArrivals" style="color:black">Shop Now</a></button>
+            </div>
+            <div id="bannerRight">
+              <img src="{% static 'Image 61.png' %}" alt="" srcset="" />
+            </div>
+          </div>
+          <div id="banner" class="swiper-slide">
+            <div id="bannerLeft">
+              <h1>
+                Get Up to 30% Off <br />
+                New Arrival
+              </h1>
+              <button data-aos="fade-down" data-aos-duration="1000"><a href="#latestArrivals" style="color:black">Shop Now</a></button>
+            </div>
+            <div id="bannerRight">
+              <img src="{% static 'Image 81.png' %}" alt="" srcset="" />
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+      <div id="banner2">
+        <img src="{% static 'Mask Group 67.png' %}" alt="" srcset="" />
+        <img src="{% static 'Mask Group 68.png' %}" alt="" srcset="" />
+        <img src="{% static 'Mask Group 69.png' %}" alt="" srcset="" />
+        <img src="{% static 'Mask Group 70.png' %}" alt="" srcset="" />
+        <img src="{% static 'Mask Group 71.png' %}" alt="" srcset="" />
+      </div>
+      <div id="bestCollections">
+        <div id="bestCollectionsHeading" data-aos="fade-down" >
+          <h1>&nbsp; &nbsp;Best Collections</h1>
+          <p>See the best collection we have with us.</p>
+        </div>
+        <div id="bestCollectionsimg">
+          <div id="bcimg1" data-aos="flip-right" data-aos-duration="1500" data-aos-delay="500">
+            <img src="{% static 'Mask Group 7.png' %}" alt="" srcset="" />
+            <div id="bciimgHover">
+              <h2>Heading</h2>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae rem quidem laudantium error! Corporis nobis numquam voluptatibus fugit reprehenderit quod.</p>
+            </div>
+          </div>
+          <div id="bcimg2" data-aos="flip-up" data-aos-duration="1500" data-aos-delay="500">
+            <img src="{% static 'Mask Group 9.png' %}" alt="" srcset="" />
+            <div id="bciimgHover">
+              <h2>Heading</h2>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae rem quidem laudantium error! Corporis nobis numquam voluptatibus fugit reprehenderit quod.</p>
+            </div>
+          </div>
+          <div id="bcimg3" data-aos="flip-up" data-aos-duration="1500" data-aos-delay="500">
+            <img src="{% static 'Mask Group 10.png' %}" alt="" srcset="" />
+            <div id="bciimgHover">
+              <h2>Heading</h2>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae rem quidem laudantium error! Corporis nobis numquam voluptatibus fugit reprehenderit quod.</p>
+            </div>
+          </div>
+          <div id="bcimg4" data-aos="flip-left" data-aos-duration="1500" data-aos-delay="500">
+            <img src="{% static 'Mask Group 12.png' %}" alt="" srcset="" />
+            <div id="bciimgHover">
+              <h2>Heading</h2>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae rem quidem laudantium error! Corporis nobis numquam voluptatibus fugit reprehenderit quod.</p>
+            </div>
+          </div>
+          <div id="bcimg5" data-aos="flip-right" data-aos-duration="1500" data-aos-delay="500">
+            <img src="{% static 'Mask Group 13.png' %}" alt="" srcset="" />
+            <div id="bciimgHover">
+              <h2>Heading</h2>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae rem quidem laudantium error! Corporis nobis numquam voluptatibus fugit reprehenderit quod.</p>
+            </div>
+          </div>
+          <div id="bcimg6" data-aos="flip-down" data-aos-duration="1500" data-aos-delay="500">
+            <img src="{% static 'Mask Group 14.png' %}" alt="" srcset="" />
+            <div id="bciimgHover">
+              <h2>Heading</h2>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae rem quidem laudantium error! Corporis nobis numquam voluptatibus fugit reprehenderit quod.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="fashionCreativeCloud">
+        <img src="{% static 'Mask Group 15.png' %}" alt="" />
+      </div>
+      <div id="fashionCreativeCloudHeading">
+        <h1>Fashion <span style="color: red;">Creative</span> Cloud</h1>
+      </div>
+      <div id="latestArrivals" style="position: relative;">
+        <div id="latestArrivalsHeading" data-aos="flip-down" data-aos-delay="500">
+          <h1>Latest Arrivals</h1>
+          <p>Explore the newest items of our shop.</p>
+        </div>
+        <div id="latestArrivalsImg" class="swiper-container s2" data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="500">
+          <div class="swiper-wrapper">
+            {% for i in latestArrival %}
+              <div id="laiImg" class="swiper-slide">
+                <div id="laiImgTop">
+                  <img src="{{ i.Image.url }}" alt="" srcset="" />
+                  <div id="laiImgTopHeading">
+                  <button><a href="{% url 'shop' i.id %}" style="color: #fff;">Add To Cart</a></button>
+                  </div>
+                </div>
+                <div id="laiImgHeading">
+                  {{ i.title }}
+                </div>
+                <div id="laiImgBottom">
+                  &#8377; {{ i.price }}
+                  <div id="laiibLeftStar">
+                    {% countStars i.stars as y %}
+                    {% for k in y %}
+                    <i class="ri-star-fill"></i>
+                    {% endfor %}
+                    {% countStars2 i.stars as m %}
+                    {% for l in m %}
+                    <i class="ri-star-line"></i>
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+            {% endfor %}  
+          </div>
+        </div>
+        <div
+          class="swiper-pagination p1"
+          style="position: absolute; bottom: -40px;"
+        ></div>
+      </div>
+      <div id="categoryCards">
+        <div id="ccCard" data-aos="flip-right" data-aos-duration="1500" data-aos-delay="500">
+          <div id="cccImg">
+            <div id="cccImgHover">
+              <a href="{% url 'mens_kurta' %}" style="color: white;"><i class="ri-search-2-line"></i></a>
+              <a href="{% url 'mens_kurta' %}" style="color: white;"><p>View</p></a>
+            </div>
+            <img src="{% static 'Image 87.png' %}" alt="" srcset="" />
+          </div>
+          <div id="cccTitle">
+            <h3>Kurtas</h3>
+          </div>
+        </div>
+        <div id="ccCard" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="500">
+          <div id="cccImg">
+            <div id="cccImgHover">
+              <a href="{% url 'womens_saree' %}" style="color: white;"><i class="ri-search-2-line"></i></a>
+              <a href="{% url 'womens_saree' %}" style="color: white;"><p>View</p></a>
+            </div>
+            <img src="{% static 'Image 82.png' %}" alt="" srcset="" />
+          </div>
+          <div id="cccTitle">
+            <h3>Sarees</h3>
+          </div>
+        </div>
+        <div id="ccCard" data-aos="flip-right" data-aos-duration="1000" data-aos-delay="500">
+          <div id="cccImg">
+            <div id="cccImgHover">
+              <a href="{% url 'mens_blazer' %}" style="color: white;"><i class="ri-search-2-line"></i></a>
+              <a href="{% url 'mens_blazer' %}" style="color: white;"><p>View</p></a>
+            </div>
+            <img src="{% static 'Image 81.png' %}" alt="" srcset="" />
+          </div>
+          <div id="cccTitle">
+            <h3>Blazers</h3>
+          </div>
+        </div>
+      </div>
+      <div id="latestArrivals" style="position: relative;">
+        <div id="latestArrivalsHeading" data-aos="flip-down" data-aos-delay="500">
+          <h1>Best Seller</h1>
+          <p>See the most bought product from best sellers</p>
+        </div>
+        <div id="latestArrivalsImg" class="swiper-container s3" data-aos="zoom-out" data-aos-duration="1000" data-aos-delay="500">
+          <div class="swiper-wrapper">
+          {% for i in bestSeller %}  
+            <div id="laiImg" class="swiper-slide">
+              <div id="laiImgTop">
+                <img src="{{ i.Image.url }}" alt="" srcset="" />
+                <div id="laiImgTopHeading">
+                  <button><a href="{% url 'shop' i.id %}" style="color: #fff;">Add To Cart</a></button>
+                </div>
+              </div>
+              <div id="laiImgHeading">
+                {{ i.title }}
+              </div>
+              <div id="laiImgBottom">
+                &#8377; {{ i.price }}
+                <div id="laiibLeftStar">
+                  {% countStars i.stars as y %}
+                  {% for k in y %}
+                  <i class="ri-star-fill"></i>
+                  {% endfor %}
+                  {% countStars2 i.stars as m %}
+                  {% for l in m %}
+                  <i class="ri-star-line"></i>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+          </div>
+        </div>
+        <div
+          class="swiper-pagination p2"
+          style="position: absolute; bottom: -40px;"
+        ></div>
+      </div>
+    </div>
+
+    {% endblock body %}

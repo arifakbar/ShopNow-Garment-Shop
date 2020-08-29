@@ -1,0 +1,76 @@
+{% extends "base2.html" %} 
+{% block body %}
+{% load static %}
+<style>
+    #AdminOrderMaintain{
+        height: 35px;
+        width: 150px;
+        text-align: center;
+        border: 1px solid black;
+        cursor: pointer;
+        color: white;
+        background-color: #Ffa948;
+        margin-bottom: 5px;
+    }
+    #inputDivs{
+            display: flex;
+            flex-direction: column;
+            font-size: 20px;
+            width: 100%;
+            margin: 20px 0;
+    }
+    .inputValues{
+        height: 30px;
+        width: 600px;
+        margin: 5px 0;
+        padding-left: 10px;
+    }
+    textarea{
+        width: 600px;
+        margin: 5px 0;
+        padding-left: 10px;
+        padding-top: 5px;
+    }
+</style>
+
+<div id="shoppingCartHome">
+    <h1>Add Product</h1>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div id="inputDivs">
+            <label>Category</label> 
+            <select name="category" id="addproductCategory" class="inputValues" required>
+                <option value="" selected disabled >Select Category</option>
+                {% for i in cat %}
+                <option value="{{ i.1 }}"> {{ i.1 }} </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div id="inputDivs">
+            <label>Title</label>
+            <input type="text" name="title" id="title" class="inputValues" required>
+        </div>
+        <div id="inputDivs">
+            <label>Description</label>
+            <textarea name="description" id="description" cols="30" rows="10" required></textarea>
+        </div>
+        <div id="inputDivs">
+            <label>Price</label>
+            <input type="number" name="price" id="price" class="inputValues" required>
+        </div>
+        <div id="inputDivs">
+            <label>Stars</label>
+            <input type="number" name="stars" id="stars" class="inputValues" min="1" max="5" required>
+        </div>
+        <div id="inputDivs">
+            <label>Image</label>
+            <input type="file" name="img" id="img" class="inputValues" required>
+            <input type="file" name="img1" id="img1" class="inputValues" required>
+            <input type="file" name="img2" id="img2" class="inputValues" required>
+        </div>
+        <button type="submit" id="AdminOrderMaintain">Add Product</button>
+    </form>
+</div>
+
+    
+{% endblock body %}

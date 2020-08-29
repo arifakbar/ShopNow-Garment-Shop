@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Login</title>
+</head>
+<body>
+    <div id="signupContainer">
+        <div id="signupContainerLeft">
+            <img src="{% static 'Image 192.png' %}" alt="" srcset="">
+            <p>Already have an account? <a href="{% url 'login' %}" style="color: black;">Log In</a></p>
+        </div>
+        <div id="loginContainerRight">
+            <h1>Sign Up</h1>
+            <br>
+            <form method="POST">
+                {% csrf_token %}
+                <div id="lcrEmail">
+                    <label>Email Address</label> <br> 
+                    <input type="email" placeholder="Enter your email here..." name="email">
+                </div> <br>
+                <div id="lcrUsername">
+                    <label>Username</label> <br> 
+                    <input type="text" placeholder="Enter your username here..." name="un">
+                </div> <br>
+                <div id="lcrPassword">
+                    <label>Password</label> <br> 
+                    <input type="password" placeholder="Enter your password here..." name="pwd">
+                </div> <br>
+                <div id="lcrPassword">
+                    <label>Confirm Password</label> <br> 
+                    <input type="password" placeholder="Enter your password here..." name="pwd2">
+                </div> <br>
+                <button type="submit">Sign Up</button>
+                <a href="{% url 'home' %}" id="loginToHome">Home</a>
+                <br><br>
+
+                {% if errorPass %}
+                    <p>Password does not match</p>
+                {% endif %}
+                {% if errorUser %}
+                <p>Username already taken</p>
+                {% endif %}    
+                {% if errorEmail %}
+                    <p>Please insert a valid Email Id</p>
+                {% endif %}    
+            </form>
+        </div>
+    </div>
+</body>
+</html>

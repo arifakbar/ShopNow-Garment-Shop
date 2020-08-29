@@ -1,0 +1,50 @@
+{% extends "base2.html" %} 
+{% block body %}
+{% load static %}
+<style>
+    #AdminOrderMaintain{
+        height: 30px;
+        width: 150px;
+        text-align: center;
+        border: 1px solid black;
+        cursor: pointer;
+        color: white;
+        background-color: #Ffa948;
+    }
+</style>
+
+<div id="shoppingCartHome">
+    <h1>Orders</h1>
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Quantity</th>
+            <th>Paid</th>
+            <th>Actions</th>
+        </tr>
+        {% for i in orders %}
+        <tr>
+            <td>{{ i.user.username }}</td>
+            <td>{{ i.cloth.title }}</td>
+            <td>&#8377; {{ i.cloth.price }}</td>
+            <td>{{ i.cloth.category }}</td>
+            <td>{{ i.quantity }}</td>
+            <td>{{ i.confirmation }}</td>
+            <td>
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <button type="submit" value="{{ i.id }}" name="confirmOrder" id="AdminOrderMaintain" >Confirm Order</button>
+                    <button type="submit" value="{{ i.id }}" name="cancelOrder" id="AdminOrderMaintain" >Cancel Order</button>
+                    <button type="submit" value="{{ i.id }}" name="deleteOrder"  id="AdminOrderMaintain" >Delete Order</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+    
+{% endblock body %}

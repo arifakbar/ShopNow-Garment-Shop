@@ -1,0 +1,232 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+/* .navbar{
+    width: 100%;
+    height: 45px;
+    background-color: #1E1C1C;
+} */
+.container{
+    width: 100%;
+    height: 60%;
+    /* border: 1px solid black; */
+}
+.mainimg{
+    width: 100%;
+    height: 100%;
+    /* background-image: url(https://images.unsplash.com/photo-1493655430214-3dd7718460bb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80); */
+    background-image: url(1.png);
+    background-size: cover;
+    background-position: top;
+}
+.mainimg .toplayer{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: .4;
+}
+.toplayer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.toplayer h2{
+    color: white;
+    font-size: 3rem;
+}
+.weare{
+    position: absolute;
+    top: 45%;
+    left: 18%;
+    width: 60%;
+    height: 50%;
+    background-color: black;
+    opacity: .9;
+    padding: 0px 35px;
+}
+.weare h2{
+    color: white;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+.weare p{
+    color: white;
+    font-size: 12px;
+    margin-top: 7px;
+}
+.weare .info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    height: 42%;
+    /* border: 1px solid white; */
+    margin-top: 60px;
+    margin-left: 80px;
+}
+.info .circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #FC6E20;
+    box-shadow: 0px 1px 5px 0px white;
+}
+.circle i{
+    color: white;
+    font-size: 20px;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.content h4{
+    color: white;
+    margin-top: 10px;
+    margin-left: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+.content span{
+    font-size: 12px;
+    margin-left: 5px;
+}
+/* .content .prospan{
+    margin-left: 10px;
+    font-size: 10px;
+    font-weight: 100;
+}
+.seller{
+    margin-left: 45px;
+}*/
+/* .sellerspan{
+  font-size: 10px;
+  margin-left: 3px;
+} 
+.cities{
+    font-size: 10px;
+    margin-left: 10px;
+} */
+.middle{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 65%;
+    height: 60%;
+    /* border-radius: 1px solid black; */
+    margin-top: 20%;
+    /* background-color: yellow; */
+    margin-left: 18%;
+    padding: 0 45px 0 0px;
+}
+.middle .box{
+    width: 40%;
+    height: 45%;
+    /* border: 1px solid black; */
+    margin: 5px 0;
+    padding: 0 30px;
+}
+.box .story{
+    margin-left:150px;
+    color: rgb(75, 73, 73);
+}
+
+.box .services{
+    margin-left:120px;
+    color: rgb(75, 73, 73);
+}
+.box p{
+    font-size: 12px;
+    color: rgb(136, 135, 135);
+    margin-top: 20px;
+}
+.box img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.mission{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    /* background-color: blue; */
+    margin-left: 15%;
+    width: 71%;
+    height: 40%;
+    /* padding: 0 40px 0 40px; */
+    
+}
+.goal{
+    width: 35%;
+    height: 40%;
+    background-color: #fc6d20e8;
+    /* margin-top: 30px; */
+}
+.goal h2{
+    margin-top: 15px;
+    color: white;
+    margin-left: 130px;
+}
+.goal p{
+    text-align: center;
+    color: white;
+    /* margin-left: 30px; */
+    margin-top: 10px;
+}
+.bottom{
+    width: 100%;
+    height: 50%;
+    border: 2px solid black;
+    /* margin-top: 10px; */
+    background-image: url(bottom.png);
+    background-size: cover;
+    /* opacity: .5; */
+}
+.bottom .top{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: .85;
+}
+.top .pics{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 15%;
+    height: 80%;
+    position: relative;
+    background-color: #000000;
+}
+.top .pics img{
+    width: 100%;
+    height: 90%;
+    background-color: black;
+}
+#aboutComment{
+    margin-top: 50px;
+    text-align: center;
+    font-family: Playfair Display;
+    font-weight: 400;
+    margin-bottom: -40px;
+    color: #FC6E20;
+    letter-spacing: 2px;
+}
+.pics p{
+    color: white;
+    font-family: Playfair Display;
+    text-decoration: underline #fc6d20e8;
+}

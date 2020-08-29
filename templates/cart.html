@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block body %}
+{% load static %}
+{% load multiply %}
+
+    <div id="shoppingCartHome">
+        <h1 data-aos='slide-down'>Shopping Cart</h1>
+            <table data-aos="slide-up">
+                <tr>
+                    <th></th>
+                    <th>Products</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+                {% for i in products %}
+                <tr>
+                    <td><a href="{% url 'deleteOrder' i.id %}"><i class="ri-close-fill" style="color: black;"></i></a></td>
+                    <td>
+                        <div id="cartDetails" style="display: flex;align-items:center;justify-content:center">
+                            <img src="{{ i.cloth.Image.url }}" alt="" srcset="" style="height: 100px; width:100px; object-fit:contain">
+                            <div id="cartProductDetails">
+                                <h3>{{ i.cloth.title }}</h3>
+                                <p>{{ i.cloth.category }}</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>&#8377;{{ i.cloth.price }}</td>
+                    <td>{{ i.quantity }}</td>
+                    <td>&#8377; {% multiply i.cloth.price i.quantity %}</td>
+                </tr>
+                {% endfor %}
+            </table>
+
+            <h3 id="cartTotal" data-aos="slide-up" data-aos-duration='800'>Total : &#8377; {{ total }}</h3>
+            <button id="cartCheckout" data-aos="slide-up" data-aos-duration='800'><a href="#">Checkout</a></button>
+    </div>
+    
+
+    {% endblock body %}

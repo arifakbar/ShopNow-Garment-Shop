@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Login</title>
+</head>
+<body>
+    <div id="loginContainer">
+        <div id="loginContainerLeft">
+            <img src="{% static 'Image 191.png' %}" alt="" srcset="">
+            <p>Don't have an account? <a href="{% url 'signup' %}" style="color: black;">Sign up</a></p>
+        </div>
+        <div id="loginContainerRight">
+            <h1>Log In</h1>
+            <form method="POST">
+                {% csrf_token %}
+                <div id="lcrUsername">
+                    <label>Username</label> <br> 
+                    <input type="text" placeholder="Enter your username here..." name="un">
+                </div> <br>
+                <div id="lcrPassword">
+                    <label>Password</label> <br> 
+                    <input type="password" placeholder="Enter your password here..." name="pwd">
+                </div> <br>
+                <button type="submit">Login</button>
+
+                <a href="{% url 'home' %}" id="loginToHome">Home</a>
+
+                <br><br>
+
+                {% if errorLogin %}
+                    <p>Wrong Username or Passowrd</p>
+                {% endif %}    
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>
